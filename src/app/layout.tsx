@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteHeader } from "@/components/layout/site-header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Curse",
-  description: "Next.js on Cloudflare Workers",
+  title: "Endurance Fuel",
+  description:
+    "Hydration and carb fueling calculator for endurance workouts and competitions.",
 };
 
 export default function RootLayout({
@@ -24,8 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
+      >
+        <SiteHeader />
+        <main>{children}</main>
       </body>
     </html>
   );
