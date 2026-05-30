@@ -166,3 +166,9 @@ dist
 .env*
 !.env.example
 .wrangler/
+
+# Test artifacts
+
+test-results/
+playwright-report/
+blob-report/
