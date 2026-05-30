@@ -23,8 +23,8 @@ function NotesList({ notes }: { notes: string[] }) {
   if (notes.length === 0) return null;
   return (
     <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-      {notes.map((note) => (
-        <li key={note} className="flex gap-2">
+      {notes.map((note, index) => (
+        <li key={index} className="flex gap-2">
           <span className="text-foreground/40">•</span>
           <span>{note}</span>
         </li>

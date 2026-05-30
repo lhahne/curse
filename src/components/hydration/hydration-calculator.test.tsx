@@ -108,7 +108,11 @@ describe("FuelingResults (integration)", () => {
     expect(screen.getByText(/Per 500 ml bottle/)).toBeInTheDocument();
     expect(screen.getByText("Bottles to mix")).toBeInTheDocument();
     expect(
-      screen.getByText(/Mix 30 g table sugar and .* table salt per 500 ml bottle/),
+      screen.getByText(
+        new RegExp(
+          `Mix ${plan.homemadeDrink.recipe.sugarG} g table sugar and ${plan.homemadeDrink.recipe.saltG} g table salt per 500 ml bottle`,
+        ),
+      ),
     ).toBeInTheDocument();
   });
 
